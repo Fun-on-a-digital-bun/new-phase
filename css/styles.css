@@ -10,6 +10,26 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+/* Performance optimizations for Core Web Vitals */
+* {
+  box-sizing: border-box;
+}
+
+img {
+  content-visibility: auto;
+}
+
+.card {
+  contain: layout style paint;
+}
+
+/* Reduce layout shift */
+.card-img-top {
+  aspect-ratio: 16/9;
+  width: 100%;
+  height: 200px;
+}
+
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -10899,4 +10919,16 @@ textarea.form-control-lg {
   height: 4rem;
   width: 4rem;
   font-size: 2rem;
+}
+
+/* Custom button hover styles */
+.btn-primary:hover {
+  background-color: #A6683D !important;
+  border-color: #A6683D !important;
+}
+
+.btn-primary:focus, .btn-primary.focus {
+  background-color: #A6683D !important;
+  border-color: #A6683D !important;
+  box-shadow: 0 0 0 0.25rem rgba(166, 104, 61, 0.25) !important;
 }
